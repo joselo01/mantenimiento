@@ -1,20 +1,43 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="container main-container">
+    <h1>Mantenimiento</h1>
+    <div class="row">
+        <div class="col-6">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Codigo</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Edad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of persona" (click)="openEdit(item)" [class.active]="item == selectedPersona">
+                        <th scope="row">{{item.codigo}}</th>
+                        <td>{{item.nombre}}</td>
+                        <td>{{item.apellido}}</td>
+                        <td>{{item.edad}}</td>
+                    </tr>
 
+                </tbody>
+            </table>
+        </div>
+        <div class="col-6">
+            <form>
+                <div class="form-group">
+                    <input [(ngModel)]="selectedPersona.nombre" name="nombre" #nombre="ngModel" id="nombre" type="text" placeholder="Nombre" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <input [(ngModel)]="selectedPersona.apellido" name="apellido" #apellido="ngModel" id="apellido" type="text" placeholder="Apellido" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <input [(ngModel)]="selectedPersona.edad" name="edad" #edad="ngModel" type="text" id="edad" placeholder="Edad" class="form-control" />
+                </div>
+
+                <button (click)="addOrEdit()" type="submit" class="btn btn-primary" style="margin-right: 10px;">Submit</button>
+                <button *ngIf="selectedPersona.codigo !== 0" (click)="delete()" type="submit" class="btn btn-danger">Delete</button>
+
+            </form>
+        </div>
+    </div>
+</div>
