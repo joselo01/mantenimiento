@@ -25,13 +25,13 @@
         <div class="col-6">
             <form>
                 <div class="form-group">
-                    <input [(ngModel)]="selectedPersona.nombre" name="nombre" #nombre="ngModel" id="nombre" type="text" placeholder="Nombre" class="form-control" />
+                    <input [(ngModel)]="selectedPersona.nombre" name="nombre" id="nombre" type="text" placeholder="Nombre" class="form-control" />
                 </div>
                 <div class="form-group">
-                    <input [(ngModel)]="selectedPersona.apellido" name="apellido" #apellido="ngModel" id="apellido" type="text" placeholder="Apellido" class="form-control" />
+                    <input [(ngModel)]="selectedPersona.apellido" name="apellido" id="apellido" type="text" placeholder="Apellido" class="form-control" />
                 </div>
                 <div class="form-group">
-                    <input [(ngModel)]="selectedPersona.edad" name="edad" #edad="ngModel" type="text" id="edad" placeholder="Edad" class="form-control" />
+                    <input [(ngModel)]="selectedPersona.edad" name="edad" type="text" id="edad" placeholder="Edad" class="form-control" />
                 </div>
 
                 <button (click)="addOrEdit()" type="submit" class="btn btn-primary" style="margin-right: 10px;">Submit</button>

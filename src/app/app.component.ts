@@ -9,7 +9,7 @@ import { Persona } from './interfaces/interfaces-personas';
 export class AppComponent {
   persona: Persona[] = [
     {codigo: 1, nombre: 'Jose', apellido: 'Mujica', edad: 20},
-    {codigo: 2, nombre: 'Miguel', apellido: 'Agular', edad: 30},
+    {codigo: 2, nombre: 'Miguel', apellido: 'Aguilar', edad: 30},
     {codigo: 3, nombre: 'Carlos', apellido: 'Tafur', edad: 35},
     {codigo: 4, nombre: 'Alejandro', apellido: 'Dominguez', edad: 22},
     {codigo: 5, nombre: 'Fernando', apellido: 'Camacho', edad: 25}
